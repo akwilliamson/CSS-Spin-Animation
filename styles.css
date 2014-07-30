@@ -1,0 +1,45 @@
+#wrapper {
+  height: 600px;
+  width: auto;
+  margin: 40px 40px; 
+  border: 3px solid black;
+}
+
+#hover-box {
+  height: 100px;
+  width: 100px;
+  border-radius: 0 0 30px 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+#cube {
+  height: 80px;
+  width: 80px;
+  border-radius: 5px;
+  background-color: red;
+  opacity: 0.5;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: red;
+  line-height: 80px;
+  -webkit-transform-origin:20px 20px;
+  transition: .5s;
+}
+
+#wrapper:hover #cube {
+  opacity: 1;
+  color: black;
+}
+
+#hover-box:hover {
+  -webkit-animation: move_one 1s linear 1;
+}
+
+@-webkit-keyframes move_one {
+    0%  {-webkit-transform: translate(0px) rotate(-90deg);}  
+    30% {-webkit-transform: translate(40px, -40px) rotate(180deg);}
+    60% {-webkit-transform: translate(80px, 0px) rotate(180deg);} 
+    100% {-webkit-transform: translate(100px, 400px) rotate(360deg);}    
+}
