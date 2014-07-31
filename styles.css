@@ -5,16 +5,41 @@
   border: 5px solid black;
 }
 
+#circle {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.fade-out-1 {
+  transition-delay: .9s;
+}
+
+.fade-out-2 {
+  transition-delay: 1.8s;
+}
+
+.fade-out-3 {
+  transition-delay: 2.7s;
+}
+
+.fade-out-4 {
+  transition-delay: 3.6s;
+}
+
+.fade-out-5 {
+  transition-delay: 4.5s;
+}
+
 #hover-box1 {
   height: 150px;
   width: 150px;
-  background-color: green;
 }
 
 #box2 {
   height: 150px;
   width: 150px;
-  background-color: blue;
   float: left;
   margin-top: 345px;
   margin-left: 340px;
@@ -25,7 +50,6 @@
 #box3 {
   height: 150px;
   width: 150px;
-  background-color: red;
   float: left;
   margin-top: 345px;
   margin-left: 290px;
@@ -36,11 +60,11 @@
 #box4 {
   height: 150px;
   width: 150px;
-  background-color: mediumorchid;
   float: left;
   margin-top: 345px;
   margin-left: 140px;
-  opacity: 1;
+  opacity: 0;
+  transition-delay: 2.7s;
 }
 
 #cube1 {
@@ -48,7 +72,6 @@
   width: 60px;
   display: inline-block;
   margin-top: 45px;
-  background-color: yellow;
   opacity: 0.5;
   -webkit-transform-origin: 75px 15px;
   transition: .5s;
@@ -59,7 +82,6 @@
   width: 60px;
   display: inline-block;
   margin-top: 45px;
-  background-color: orange;
   -webkit-transform-origin: 75px 15px;
 }
 
@@ -68,7 +90,6 @@
   width: 60px;
   display: inline-block;
   margin-top: 45px;
-  background-color: purple;
   -webkit-transform-origin: 75px 15px;
 }
 
@@ -77,8 +98,18 @@
   width: 60px;
   display: inline-block;
   margin-top: 45px;
-  background-color: mediumseagreen;
-  -webkit-transform-origin: 75px 15px;
+  -webkit-transform-origin: 50px 15px;
+}
+
+#cube5 {
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin-top: 390px;
+  margin-left: -40px;
+  opacity: 0;
+  transition-delay: 3.6s;
+  -webkit-transform-origin: 60px 60px;
 }
 
 #wrapper:hover #cube1 {
@@ -93,6 +124,10 @@
   -webkit-animation: cube-curvature .6s linear, cube-drop .3s linear .6s;
 }
 
+#hover-box1:hover #cube1 .fade-out-1 {
+  opacity: 0;
+}
+
 #hover-box1:hover + #box2 {
   opacity: 1;
   -webkit-animation: box-two-glide .9s linear .9s;
@@ -100,6 +135,10 @@
 
 #hover-box1:hover + #box2 #cube2 {
   -webkit-animation: cube-curvature .6s linear .9s, cube-drop .3s linear 1.5s;
+}
+
+#hover-box1:hover + #box2 #cube2 .fade-out-2 {
+  opacity: 0;
 }
 
 #hover-box1:hover + #box2 + #box3 {
@@ -111,6 +150,32 @@
   -webkit-animation: cube-curvature .6s linear 1.8s, cube-drop .3s linear 2.4s;
 }
 
+#hover-box1:hover + #box2 + #box3 #cube3 .fade-out-3 {
+  opacity: 0;
+}
+
+#hover-box1:hover + #box2 + #box3 + #box4 {
+  opacity: 1;
+  -webkit-animation: box-four-glide .9s linear 2.7s;
+}
+
+#hover-box1:hover + #box2 + #box3 + #box4 #cube4 {
+  -webkit-animation: cube-curvature .6s linear 2.7s, last-cube-drop .3s linear 3.3s;
+}
+
+#hover-box1:hover + #box2 + #box3 + #box4 #cube4 .fade-out-4 {
+  opacity: 0;
+}
+
+#hover-box1:hover + #box2 + #box3 + #box4 + #cube5 {
+  opacity: 1;
+  -webkit-animation: last-cube-curvature 5s linear 3.6s;
+}
+
+#hover-box1:hover + #box2 + #box3 + #box4 + #cube5 .fade-out-5 {
+  opacity: 0;
+}
+
 /* -------------------- Animations -------------------- */
 
 @-webkit-keyframes cube-curvature {
@@ -119,9 +184,20 @@
   100% {-webkit-transform: rotate(180deg);}
 }
 
+@-webkit-keyframes last-cube-curvature {
+  0% {-webkit-transform: rotate(0deg);}
+  12% {-webkit-transform: rotate(90deg);}
+  100% {-webkit-transform: rotate(90deg);}
+}
+
 @-webkit-keyframes cube-drop {
   0% {-webkit-transform: translate(90px, -30px);}
   100% {-webkit-transform: translate(90px, 45px );}
+}
+
+@-webkit-keyframes last-cube-drop {
+  0% {-webkit-transform: translate(40px, -30px);}
+  100% {-webkit-transform: translate(40px, 45px );}
 }
 
 @-webkit-keyframes box-one-glide {
@@ -149,5 +225,17 @@
   72% {-webkit-transform: translate(140px, -220px);}
   100% {-webkit-transform: translate(200px, -45px);}
 }
+
+@-webkit-keyframes box-four-glide {
+  0% {-webkit-transform: translate(0px, 0px);}
+  27% {-webkit-transform: translate(20px, -110px);}
+  42% {-webkit-transform: translate(30px, -130px);}
+  57% {-webkit-transform: translate(40px, -130px);}
+  72% {-webkit-transform: translate(50px, -110px);}
+  100% {-webkit-transform: translate(70px, -45px);}
+}
+
+
+
 
 
