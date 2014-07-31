@@ -1,8 +1,26 @@
 #wrapper {
   height: 600px;
   width: 1300px;
-  margin: 40px 40px; 
+  margin: 0 40px; 
   border: 5px solid black;
+}
+
+#nav {
+  height: 100px;
+  width: 1310px;
+  margin: 0 40px;
+  background-color: tan;
+}
+
+#notice {
+  float: right;
+  margin-top: -600px;
+  margin-right: 250px;
+  color: grey;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: sans-serif;
+  opacity: 0; 
 }
 
 #circle {
@@ -176,7 +194,13 @@
   opacity: 0;
 }
 
-/* -------------------- Animations -------------------- */
+#hover-box1:hover + #box2 + #box3 + #box4 + #cube5 + #notice {
+  -webkit-animation: fade-in 100s linear;
+}
+
+/* ------------------------------------------------------------- */
+/* -------------------- Keyframe Animations -------------------- */
+/* ------------------------------------------------------------- */
 
 @-webkit-keyframes cube-curvature {
   0% {-webkit-transform: rotate(0deg);}
@@ -228,14 +252,19 @@
 
 @-webkit-keyframes box-four-glide {
   0% {-webkit-transform: translate(0px, 0px);}
-  27% {-webkit-transform: translate(20px, -110px);}
-  42% {-webkit-transform: translate(30px, -130px);}
-  57% {-webkit-transform: translate(40px, -130px);}
-  72% {-webkit-transform: translate(50px, -110px);}
+  27% {-webkit-transform: translate(20px, -90px);}
+  42% {-webkit-transform: translate(30px, -110px);}
+  57% {-webkit-transform: translate(40px, -110px);}
+  72% {-webkit-transform: translate(50px, -90px);}
   100% {-webkit-transform: translate(70px, -45px);}
 }
 
-
+@-webkit-keyframes fade-in {
+    0% { opacity: 0; }
+    5% { opacity: 0; }
+    6% { opacity: 1; }
+    100% { opacity: 1; }
+}
 
 
 
