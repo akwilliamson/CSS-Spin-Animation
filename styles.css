@@ -1,50 +1,155 @@
 #wrapper {
   height: 600px;
-  width: auto;
+  width: 1300px;
   margin: 40px 40px; 
-  border: 3px solid black;
+  border: 5px solid black;
 }
 
-#hover-box {
+#hover-box1 {
+  height: 150px;
+  width: 150px;
+  background-color: green;
+}
+
+#box2 {
+  height: 150px;
+  width: 150px;
+  background-color: blue;
+  float: left;
+  margin-top: 345px;
+  margin-left: 340px;
+  opacity: 0;
+  transition-delay: .9s;
+}
+
+#box3 {
   height: 150px;
   width: 150px;
   background-color: red;
-  padding-top: 10px;
-  padding-left: 10px;
+  float: left;
+  margin-top: 345px;
+  margin-left: 290px;
+  opacity: 0;
+  transition-delay: 1.8s;
 }
 
-#cube {
-  height: 40px;
-  width: 40px;
-  border-radius: 5px;
+#cube1 {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  margin-top: 45px;
   background-color: yellow;
   opacity: 0.5;
-  color: red;
-  -webkit-transform-origin:20px 20px;
+  -webkit-transform-origin: 75px 15px;
   transition: .5s;
 }
 
-#wrapper:hover #cube {
+#cube2 {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  margin-top: 45px;
+  background-color: orange;
+  -webkit-transform-origin: 75px 15px;
+}
+
+#cube3 {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  margin-top: 45px;
+  background-color: purple;
+  -webkit-transform-origin: 75px 15px;
+}
+
+#wrapper:hover #cube1 {
   opacity: 1;
-  color: black;
 }
 
-#hover-box:hover {
-  /*  -webkit-animation: move_one 1s linear 1;*/
-  -webkit-animation: hover-box-glide 3s linear 1;
+#hover-box1:hover {
+  -webkit-animation: box-one-glide .9s linear;
 }
 
-@-webkit-keyframes hover-box-glide {
+#hover-box1:hover #cube1 {
+  -webkit-animation: cube-one-curvature .6s linear, cube-one-drop .3s linear .6s;
+}
+
+#hover-box1:hover + #box2 {
+  opacity: 1;
+  -webkit-animation: box-two-glide .9s linear .9s;
+}
+
+#hover-box1:hover + #box2 #cube2 {
+  -webkit-animation: cube-two-curvature .6s linear .9s, cube-two-drop .3s linear 1.5s;
+}
+
+#hover-box1:hover + #box2 + #box3 {
+  opacity: 1;
+/*  -webkit-animation: box-two-glide .9s linear .9s;*/
+}
+
+/* -------------------- Animations -------------------- */
+
+@-webkit-keyframes cube-one-curvature {
+  0% {-webkit-transform: rotate(0deg);}
+  50% {-webkit-transform: rotate(90deg);} 
+  100% {-webkit-transform: rotate(180deg);}
+}
+
+@-webkit-keyframes cube-two-curvature {
+  0% {-webkit-transform: rotate(0deg);}
+  50% {-webkit-transform: rotate(90deg);} 
+  100% {-webkit-transform: rotate(180deg);}
+}
+
+@-webkit-keyframes cube-one-drop {
+  0% {-webkit-transform: translate(90px, -30px);}
+  100% {-webkit-transform: translate(90px, 45px );}
+}
+
+@-webkit-keyframes cube-two-drop {
+  0% {-webkit-transform: translate(90px, -30px);}  
+  100% {-webkit-transform: translate(90px, 60px );}
+}
+
+@-webkit-keyframes box-one-glide {
   0% {-webkit-transform: translate(0px);}
-  20% {-webkit-transform: translate(40px, -40px);}
-  40% {-webkit-transform: translate(80px, -40px);}
-  60% {-webkit-transform: translate(120px, 0px);}
+  22% {-webkit-transform: translate(40px, -40px);}
+  44% {-webkit-transform: translate(80px, -40px);}
+  66% {-webkit-transform: translate(120px, 0px);}
   100% {-webkit-transform: translate(250px, 450px);}
 }
 
-/*@-webkit-keyframes move_one {
-    0%  {-webkit-transform: translate(0px) rotate(-90deg);}  
-    30% {-webkit-transform: translate(40px, -40px) rotate(180deg);}
-    60% {-webkit-transform: translate(80px, 0px) rotate(180deg);} 
-    100% {-webkit-transform: translate(100px, 400px) rotate(360deg);}    
-}*/
+@-webkit-keyframes box-two-glide {
+  0% {-webkit-transform: translate(0px, 0px);}
+  27% {-webkit-transform: translate(130px, -350px);}
+  42% {-webkit-transform: translate(170px, -390px);}
+  57% {-webkit-transform: translate(210px, -390px);}
+  72% {-webkit-transform: translate(250px, -350px);}
+  100% {-webkit-transform: translate(350px, -45px);} 
+}
+
+/*  24% {-webkit-transform: translate(380px, 100px);}
+  28% {-webkit-transform: translate(420px, 60px);}
+  32% {-webkit-transform: translate(460px, 60px);}
+  36% {-webkit-transform: translate(500px, 100px);}
+  42% {-webkit-transform: translate(600px, 450px);}
+
+  completed up to ^^^ 
+
+  48% {-webkit-transform: translate(700px, 200px);}
+  52% {-webkit-transform: translate(730px, 160px);}
+  56% {-webkit-transform: translate(760px, 160px);}
+  60% {-webkit-transform: translate(800px, 200px);}
+  66% {-webkit-transform: translate(880px, 450px);}
+
+  72% {-webkit-transform: translate(950px, 340px);}
+  76% {-webkit-transform: translate(990px, 300px);}
+  80% {-webkit-transform: translate(1030px, 300px);}
+  86% {-webkit-transform: translate(1070px, 450px);}
+
+  92% {-webkit-transform: translate(1100px, 400px);}
+  100% {-webkit-transform: translate(1130px, 450px);}*/
+
+
+
