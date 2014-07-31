@@ -33,6 +33,16 @@
   transition-delay: 1.8s;
 }
 
+#box4 {
+  height: 150px;
+  width: 150px;
+  background-color: mediumorchid;
+  float: left;
+  margin-top: 345px;
+  margin-left: 140px;
+  opacity: 1;
+}
+
 #cube1 {
   height: 60px;
   width: 60px;
@@ -62,6 +72,15 @@
   -webkit-transform-origin: 75px 15px;
 }
 
+#cube4 {
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  margin-top: 45px;
+  background-color: mediumseagreen;
+  -webkit-transform-origin: 75px 15px;
+}
+
 #wrapper:hover #cube1 {
   opacity: 1;
 }
@@ -71,7 +90,7 @@
 }
 
 #hover-box1:hover #cube1 {
-  -webkit-animation: cube-one-curvature .6s linear, cube-one-drop .3s linear .6s;
+  -webkit-animation: cube-curvature .6s linear, cube-drop .3s linear .6s;
 }
 
 #hover-box1:hover + #box2 {
@@ -80,36 +99,29 @@
 }
 
 #hover-box1:hover + #box2 #cube2 {
-  -webkit-animation: cube-two-curvature .6s linear .9s, cube-two-drop .3s linear 1.5s;
+  -webkit-animation: cube-curvature .6s linear .9s, cube-drop .3s linear 1.5s;
 }
 
 #hover-box1:hover + #box2 + #box3 {
   opacity: 1;
-/*  -webkit-animation: box-two-glide .9s linear .9s;*/
+  -webkit-animation: box-three-glide .9s linear 1.8s;
+}
+
+#hover-box1:hover + #box2 + #box3 #cube3 {
+  -webkit-animation: cube-curvature .6s linear 1.8s, cube-drop .3s linear 2.4s;
 }
 
 /* -------------------- Animations -------------------- */
 
-@-webkit-keyframes cube-one-curvature {
+@-webkit-keyframes cube-curvature {
   0% {-webkit-transform: rotate(0deg);}
   50% {-webkit-transform: rotate(90deg);} 
   100% {-webkit-transform: rotate(180deg);}
 }
 
-@-webkit-keyframes cube-two-curvature {
-  0% {-webkit-transform: rotate(0deg);}
-  50% {-webkit-transform: rotate(90deg);} 
-  100% {-webkit-transform: rotate(180deg);}
-}
-
-@-webkit-keyframes cube-one-drop {
+@-webkit-keyframes cube-drop {
   0% {-webkit-transform: translate(90px, -30px);}
   100% {-webkit-transform: translate(90px, 45px );}
-}
-
-@-webkit-keyframes cube-two-drop {
-  0% {-webkit-transform: translate(90px, -30px);}  
-  100% {-webkit-transform: translate(90px, 60px );}
 }
 
 @-webkit-keyframes box-one-glide {
@@ -129,27 +141,13 @@
   100% {-webkit-transform: translate(350px, -45px);} 
 }
 
-/*  24% {-webkit-transform: translate(380px, 100px);}
-  28% {-webkit-transform: translate(420px, 60px);}
-  32% {-webkit-transform: translate(460px, 60px);}
-  36% {-webkit-transform: translate(500px, 100px);}
-  42% {-webkit-transform: translate(600px, 450px);}
-
-  completed up to ^^^ 
-
-  48% {-webkit-transform: translate(700px, 200px);}
-  52% {-webkit-transform: translate(730px, 160px);}
-  56% {-webkit-transform: translate(760px, 160px);}
-  60% {-webkit-transform: translate(800px, 200px);}
-  66% {-webkit-transform: translate(880px, 450px);}
-
-  72% {-webkit-transform: translate(950px, 340px);}
-  76% {-webkit-transform: translate(990px, 300px);}
-  80% {-webkit-transform: translate(1030px, 300px);}
-  86% {-webkit-transform: translate(1070px, 450px);}
-
-  92% {-webkit-transform: translate(1100px, 400px);}
-  100% {-webkit-transform: translate(1130px, 450px);}*/
-
+@-webkit-keyframes box-three-glide {
+  0% {-webkit-transform: translate(0px, 0px);}
+  27% {-webkit-transform: translate(70px, -220px);}
+  42% {-webkit-transform: translate(90px, -260px);}
+  57% {-webkit-transform: translate(110px, -260px);}
+  72% {-webkit-transform: translate(140px, -220px);}
+  100% {-webkit-transform: translate(200px, -45px);}
+}
 
 
