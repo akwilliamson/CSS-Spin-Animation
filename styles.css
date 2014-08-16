@@ -27,7 +27,7 @@
   height: 100%;
   width: 100%;
   border-radius: 50%;
-  background-color: black;
+  background-color: ;
 }
 
 .fade-out-1 {
@@ -55,9 +55,12 @@
   width: 150px;
 }
 
-#box2 {
+#box {
   height: 150px;
-  width: 150px;
+  width: 150px;  
+}
+
+#box2 {
   float: left;
   margin-top: 345px;
   margin-left: 340px;
@@ -66,8 +69,6 @@
 }
 
 #box3 {
-  height: 150px;
-  width: 150px;
   float: left;
   margin-top: 345px;
   margin-left: 290px;
@@ -76,8 +77,6 @@
 }
 
 #box4 {
-  height: 150px;
-  width: 150px;
   float: left;
   margin-top: 345px;
   margin-left: 140px;
@@ -85,9 +84,12 @@
   transition-delay: 2.7s;
 }
 
-#cube1 {
+#cube {
   height: 60px;
   width: 60px;
+}
+
+#cube1 {
   display: inline-block;
   margin-top: 45px;
   opacity: 0.5;
@@ -96,32 +98,24 @@
 }
 
 #cube2 {
-  height: 60px;
-  width: 60px;
   display: inline-block;
   margin-top: 45px;
   -webkit-transform-origin: 75px 15px;
 }
 
 #cube3 {
-  height: 60px;
-  width: 60px;
   display: inline-block;
   margin-top: 45px;
   -webkit-transform-origin: 75px 15px;
 }
 
 #cube4 {
-  height: 60px;
-  width: 60px;
   display: inline-block;
   margin-top: 45px;
   -webkit-transform-origin: 50px 15px;
 }
 
 #cube5 {
-  height: 60px;
-  width: 60px;
   float: left;
   margin-top: 390px;
   margin-left: -40px;
